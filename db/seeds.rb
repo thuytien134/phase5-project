@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Category.create(name: 'Lipstick')
+Category.create(name: 'Perfume')
+Category.create(name: 'Skincare')
 Product.create!(name:'Nars Semi Matte Lipstick in Jungle Red',price:26, image_url:'https://pyxis.nymag.com/v1/imgs/0d2/c9d/7e2638d562bb724d04da328e4dba4cfa04-nars-semi-matte-lipstick-in-jungle-red.rsquare.w600.jpg', category_id:1)
 Product.create!(name:'Revlon Super Lustrous Lipstick',price:9.49, image_url:'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQIOsYj4gsHxE7J7pgXckf9jTpqj3pEwat-nWgMczNXnT130siE', category_id:1)
 Product.create!(name:'Mac Matte lipstick',price:27, image_url:'https://www.sephora.com/productimages/sku/s2200525-main-zoom.jpg?imwidth=315', category_id:1)
