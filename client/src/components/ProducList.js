@@ -1,12 +1,12 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import ProductCard from './ProductCard';
-import { Tab, Nav, Col } from 'react-bootstrap';
+
 import CategoryFilter from './CategoryFilter';
 
 export default function ProducList() {
   const [products, setProducts] = useState([])
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("Shop");
   useEffect(() => {
     fetch("/products")
       .then((r) => r.json())
@@ -19,10 +19,10 @@ const categories = products.map(product => product.category.name).filter((el,i,a
   )
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+      <div style={{ display: "flex", justifyContent: "flex-start" }}>
         <CategoryFilter selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} categories={categories}/>
-        <div>
-          {products.map(product => {
+        <div style= {{display:"flex",flexWrap:"wrap", alignItems:"flex-end",justifyContent:"space-around"}}>
+          {displayedProducts.map(product => {
             return <ProductCard key={product.id} product={product} />
           })}
         </div>
