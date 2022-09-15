@@ -5,23 +5,16 @@ export default function CategoryFilter({ selectedCategory, setSelectedCategory, 
     return (
         <div>
             {categories.map((category,index) => {
-                return <Col sm={3} >
+                return <Col sm={3} key={index}  >
                     <Nav variant="pills" className='block'>
-                        <Nav.Item key={index} active={category === selectedCategory}>
+                        <Nav.Item  >
                             <Nav.Link eventKey="first"
                              onClick={() => setSelectedCategory(category)}>{category}</Nav.Link>  
                         </Nav.Item>
                     </Nav>
                 </Col>
             })}
-            {/* <Col sm={3}>
-                <Nav variant="pills" className="flex-column">
-                    <Nav.Item>
-                        <Nav.Link eventKey="first">Tab 1</Nav.Link>
-                    </Nav.Item>
-                    
-                </Nav>
-            </Col> */}
+           
         </div>
     )
 }

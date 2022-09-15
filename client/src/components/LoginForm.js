@@ -1,0 +1,65 @@
+
+import React from 'react'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import { useState } from 'react';
+
+
+export default function LoginForm({ onLogin, setIsLogin }) {
+
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [errors, setErrors] = useState([]);
+    const [isLoading, setIsLoading] = useState(false)
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        setIsLoading(true);
+        fetch("/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ username, password }),
+        }).then((r) => {
+            setIsLoading(false);
+            if (r.ok) {
+                r.json().then((user) => {
+                    onLogin(user)
+                    setIsLogin(true);
+                });
+            } else {
+                r.json().then((err) => setErrors(err.errors));
+            }
+        });
+    }
+    return (
+        <div>
+            <Form onSubmit={handleSubmit}
+                style={{ paddingLeft: "30%", paddingRight: "30%", paddingTop: "30px", display: "flex", flexDirection: "column" }}>
+                <Form.Group className="mb-1" controlId="formBasicUsername">
+                    <Form.Label>User name</Form.Label>
+                    <Form.Control
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        type="text" placeholder="Enter your user name" />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        type="password" placeholder="Password" />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                    {isLoading ? "Loading..." : "Login"}
+                </Button>
+                <Form.Text style={{ display: "flex", justifyContent: "space-around", alignItems: "center" }}> Don't have an account?
+                    <Button variant="info">Sign up</Button>
+                </Form.Text>
+            </Form>
+
+        </div>
+    )
+}
