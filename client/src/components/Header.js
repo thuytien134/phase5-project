@@ -7,8 +7,7 @@ export default function Header({isLogin,user}) {
             <h1>Thuy Shop</h1>
             <nav>
                 <NavLink to="/">Home ||</NavLink>
-                {/* <NavLink to="/login">Log in</NavLink> */}
-                <NavLink to="/login"> {isLogin? `Hi ${user.username}`: 'Login'}</NavLink>
+                <NavLink to="/login"> {isLogin? `Hi ${user.username}`: 'Log in'}</NavLink>
                 
             </nav>
         </div>

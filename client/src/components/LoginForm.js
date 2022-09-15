@@ -3,6 +3,8 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
+import { Alert } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function LoginForm({ onLogin, setIsLogin }) {
@@ -11,6 +13,7 @@ export default function LoginForm({ onLogin, setIsLogin }) {
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
+    const navigate = useNavigate()
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -29,7 +32,7 @@ export default function LoginForm({ onLogin, setIsLogin }) {
                     setIsLogin(true);
                 });
             } else {
-                r.json().then((err) => setErrors(err.errors));
+                r.json().then((err) => setErrors(err));
             }
         });
     }
@@ -52,11 +55,13 @@ export default function LoginForm({ onLogin, setIsLogin }) {
                         onChange={(e) => setPassword(e.target.value)}
                         type="password" placeholder="Password" />
                 </Form.Group>
+                {errors.length === 0 ? "" : <Alert severity="error" >{errors.error}</Alert>}
+
                 <Button variant="primary" type="submit">
                     {isLoading ? "Loading..." : "Login"}
                 </Button>
                 <Form.Text style={{ display: "flex", justifyContent: "space-around", alignItems: "center" }}> Don't have an account?
-                    <Button variant="info">Sign up</Button>
+                    <Button variant="info" onClick={() => navigate("/signup")}>Sign up</Button>
                 </Form.Text>
             </Form>
 

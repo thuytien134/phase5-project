@@ -5,11 +5,11 @@ import ProducList from "./ProducList";
 import LoginForm from "./LoginForm";
 import { useEffect, useState } from 'react'
 import Activity from "./Activity";
+import SignupForm from "./SignupForm";
 
 function App() {
   const [user, setUser] = useState(null);
   const [isLogin, setIsLogin] = useState(false)
-// debugger
 
 
   useEffect(() => {
@@ -35,7 +35,7 @@ function App() {
           <Activity onLogout={setUser} setIsLogin={setIsLogin} /> :
            <LoginForm onLogin={setUser} setIsLogin={setIsLogin} />} 
           />
-         
+         <Route path="/signup" element={<SignupForm setUser={setUser} setIsLogin={setIsLogin}/>}/>
       </Routes>
 
     </div>
