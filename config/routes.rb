@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get 'product-in-carts', to: "product_in_carts#index"
+  post 'product-in-carts', to: "product_in_carts#create"
   get "/users", to: "users#index"
   get '/products', to: 'products#index'
   post "/signup", to: "users#create"
