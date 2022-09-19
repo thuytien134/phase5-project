@@ -2,39 +2,34 @@ import React from 'react'
 import Logout from './Logout'
 import { Tabs, Tab } from '@mui/material'
 import ProductInBag from './ProductInBag';
-// import { useEffect,useState } from 'react';
+import Reviews from './Reviews';
+import { useState } from 'react';
 
 
 
 export default function Activity({ onLogout, setIsLogin }) {
   const [value, setValue] = React.useState(0);
-  // const [productInBags,setProductInBags] = useState([])
+  const [showBag, setShowBag] = useState(true)
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  function handleClickBag() {
-    console.log('hello')
-    // useEffect(() => {
-    //   fetch("/products")
-    //     .then((r) => r.json())
-    //     .then((data) => setProducts(data));
-    // }, []);
-  }
-
 
   return (
-    <div>
-      <Tabs
-        value={value} onChange={handleChange} aria-label="icon tabs example"
-      >
-        <Tab icon={"🛍️"} label="bag" onClick={handleClickBag} />
-        <Tab icon={"reviews"} aria-label="reviews" />
-      </Tabs>
+    <div  style={{padding:"1rem"}}>
+    
+        <Tabs
+          value={value} onChange={handleChange} aria-label="icon tabs example"
+        
+        >
+          <Tab icon={"🛍️ bag"} aria-label="bag" onClick={() => setShowBag(true)} />
+          <Tab icon={"reviews"} aria-label="reviews" onClick={() => setShowBag(false)} />
+          <Logout onLogout={onLogout} setIsLogin={setIsLogin} />
+        </Tabs>
 
-      <ProductInBag />
-        <Logout onLogout={onLogout} setIsLogin={setIsLogin} />
+        {showBag ? <ProductInBag/> : <Reviews />}
+    
 
     </div>
   )

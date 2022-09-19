@@ -12,13 +12,7 @@ function App() {
   const [isLogin, setIsLogin] = useState(false)
 
 
-//   const [productInBags,setProductInBags] = useState([])
-//   useEffect(() => {
-//    fetch("/product-in-carts")
-//      .then((r) => r.json())
-//      .then((data) => setProductInBags(data));
-//  }, []);
-//  console.log(productInBags)
+
 
   useEffect(() => {
     // auto-login
@@ -33,12 +27,17 @@ function App() {
     });
   }, []);
 
+  // function handleAddProductInBag(newProduct) {
+  //   const updatedProductInBagArr = [...productInBags, newProduct];
+  //   setProductInBags(updatedProductInBagArr);
+  // }
+
   return (
     <div className="App">
 
       <Header isLogin={isLogin} user={user} />
       <Routes>
-        <Route path="/" element={<ProducList isLogin={isLogin}/>} />
+        <Route path="/" element={<ProducList isLogin={isLogin} user={user}/>} />
         <Route path="/login" element={isLogin?
           <Activity onLogout={setUser} setIsLogin={setIsLogin} /> :
            <LoginForm onLogin={setUser} setIsLogin={setIsLogin} />} 

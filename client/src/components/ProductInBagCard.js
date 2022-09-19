@@ -1,7 +1,17 @@
 import React from 'react'
-import { Card,Button } from 'react-bootstrap'
+import { Card, Button } from 'react-bootstrap'
 
-export default function ProductInBagCard({ product }) {
+export default function ProductInBagCard({ product,id ,onDeleteProducInBag}) {
+
+    function handleClick() {
+        fetch(`product-in-carts/${id}`, {
+            method: "DELETE",
+        }).then((r) => {
+            if (r.ok) {
+              onDeleteProducInBag(id);
+            }
+          });
+    }
     return (
         <div>
             <Card style={{ width: '18rem' }}>
@@ -11,8 +21,8 @@ export default function ProductInBagCard({ product }) {
                     <Card.Text>
                         ${product.price}
                     </Card.Text>
-                    <Card.Body style={{ display: "flex", justifyContent: "space-around"  }}>
-                        <Button variant='info' >🗑</Button>
+                    <Card.Body style={{ display: "flex", justifyContent: "space-around" }}>
+                        <Button variant='info' onClick={handleClick}>🗑</Button>
                     </Card.Body>
                 </Card.Body>
             </Card>

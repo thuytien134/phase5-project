@@ -14,7 +14,7 @@ export default function Logout({onLogout,setIsLogin}) {
       }
   return (
     <div>
-      <Button variant="info" onClick={handleLogoutClick}>Log out</Button>
+      <Button variant="info" onClick={handleLogoutClick} style={{position:"absolute",top:"0.5rem"}}>Log out</Button>
     </div>
   )
 }

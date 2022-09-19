@@ -17,6 +17,17 @@ class ProductInCartsController < ApplicationController
             render json: {errors: product_in_carts.errors.full_messages}, status: :unprocessable_entity
         end
     end
+    
+    def destroy
+        product_in_cart = ProductInCart.find_by(id: params[:id])
+        if product_in_cart
+          product_in_cart.destroy
+          head :no_content
+        else
+          render json: { error: "Product not found" }, status: :not_found
+        end
+    end
+
 private
     def product_params
         params.permit(:user_id, :product_id)

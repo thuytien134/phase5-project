@@ -7,12 +7,27 @@ import { useState } from "react";
 
 
 
-export default function ProductCard({ product, isLogin }) {
+     
+export default function ProductCard({ product, isLogin, user}) {
   const [showAlert, setShowAlert] = useState(false)
+
+  
  
   function handleBagClick() {
     if (isLogin === false)
       setShowAlert(true)
+      else
+      console.log("hello")
+      fetch("/product-in-carts",{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          user_id: user.id,
+          product_id: product.id
+        })
+      }).then(r=>r.json())
   }
   return (
     <div >
@@ -27,7 +42,7 @@ export default function ProductCard({ product, isLogin }) {
             <Button variant="info" >Reviews</Button>
             <Button variant="info" onClick={handleBagClick} >🛍</Button>
           </Card.Body>
-          {showAlert ? <Alert variant="warning" style={{display:"flex", alignItems:"center", justifyContent:"space-around"}}>Please log in
+          {showAlert ? <Alert variant="warning" style={{display:"flex", alignItems:"center", justifyContent:"space-around"}}>Please log in !!!
             <Button variant="warning" onClick={()=>setShowAlert(false)}>x</Button>
           </Alert> : ""}
         </Card.Body>
