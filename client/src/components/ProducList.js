@@ -4,7 +4,7 @@ import ProductCard from './ProductCard';
 
 import CategoryFilter from './CategoryFilter';
 
-export default function ProducList() {
+export default function ProducList({isLogin}) {
   const [products, setProducts] = useState([])
   const [selectedCategory, setSelectedCategory] = useState("Shop");
   useEffect(() => {
@@ -23,7 +23,7 @@ const categories = products.map(product => product.category.name).filter((el,i,a
         <CategoryFilter selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} categories={categories}/>
         <div style= {{display:"flex",flexWrap:"wrap", alignItems:"flex-end",justifyContent:"space-around"}}>
           {displayedProducts.map(product => {
-            return <ProductCard key={product.id} product={product} />
+            return <ProductCard key={product.id} product={product} isLogin={isLogin}/>
           })}
         </div>
       </div>

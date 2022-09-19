@@ -11,6 +11,7 @@ export default function Activity({ onLogout, setIsLogin }) {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  
 
   return (
     <div>

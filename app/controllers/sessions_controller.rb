@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
         else
           render json: { error: "Incorrect username or password" }, status: :unauthorized
         end
+        # debugger
     end
 
     def destroy

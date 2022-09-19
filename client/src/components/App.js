@@ -30,7 +30,7 @@ function App() {
 
       <Header isLogin={isLogin} user={user} />
       <Routes>
-        <Route path="/" element={<ProducList />} />
+        <Route path="/" element={<ProducList isLogin={isLogin}/>} />
         <Route path="/login" element={isLogin?
           <Activity onLogout={setUser} setIsLogin={setIsLogin} /> :
            <LoginForm onLogin={setUser} setIsLogin={setIsLogin} />} 
