@@ -12,6 +12,14 @@ function App() {
   const [isLogin, setIsLogin] = useState(false)
 
 
+//   const [productInBags,setProductInBags] = useState([])
+//   useEffect(() => {
+//    fetch("/product-in-carts")
+//      .then((r) => r.json())
+//      .then((data) => setProductInBags(data));
+//  }, []);
+//  console.log(productInBags)
+
   useEffect(() => {
     // auto-login
     fetch("/me").then((r) => {

@@ -6,7 +6,6 @@ end
 
     def create
         user = User.create(user_params)
-        # debugger
         if user.valid?
             session[:user_id] = user.id
             render json: user, status: :created

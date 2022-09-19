@@ -1,4 +1,6 @@
+import { dark } from '@mui/material/styles/createPalette';
 import React from 'react'
+import { Button } from 'react-bootstrap';
 
 export default function Logout({onLogout,setIsLogin}) {
 
@@ -12,7 +14,7 @@ export default function Logout({onLogout,setIsLogin}) {
       }
   return (
     <div>
-      <button onClick={handleLogoutClick}>Log out</button>
+      <Button variant="info" onClick={handleLogoutClick}>Log out</Button>
     </div>
   )
 }
