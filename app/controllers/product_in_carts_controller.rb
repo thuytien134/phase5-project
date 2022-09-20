@@ -9,7 +9,6 @@ class ProductInCartsController < ApplicationController
     
     def create
         user = User.find_by(id: session[:user_id])
-        # debugger
         product_in_carts= user.product_in_carts.create(product_params)
         if product_in_carts.valid?
             render json: product_in_carts, status: :created
