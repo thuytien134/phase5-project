@@ -6,7 +6,7 @@ import CategoryFilter from './CategoryFilter';
 
 export default function ProducList({isLogin,user}) {
   const [products, setProducts] = useState([])
-  const [selectedCategory, setSelectedCategory] = useState("Shop");
+  const [selectedCategory, setSelectedCategory] = useState("Lipstick");
   useEffect(() => {
     fetch("/products")
       .then((r) => r.json())

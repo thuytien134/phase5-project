@@ -6,6 +6,7 @@ import LoginForm from "./LoginForm";
 import { useEffect, useState } from 'react'
 import Activity from "./Activity";
 import SignupForm from "./SignupForm";
+import ProductReviews from "./ProductReviews";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -43,6 +44,7 @@ function App() {
            <LoginForm onLogin={setUser} setIsLogin={setIsLogin} />} 
           />
          <Route path="/signup" element={<SignupForm setUser={setUser} setIsLogin={setIsLogin}/>}/>
+         <Route path="/product-reviews" element={<ProductReviews user={user}/>}/>
       </Routes>
 
     </div>

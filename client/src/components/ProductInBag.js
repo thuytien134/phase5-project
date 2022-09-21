@@ -4,7 +4,7 @@ import ProductInBagCard from './ProductInBagCard';
 
 export default function ProductInBag() {
     const [productInBags, setProductInBags] = useState([])
-    debugger
+   
     useEffect(() => {
         fetch("/product-in-carts")
             .then((r) => r.json())
