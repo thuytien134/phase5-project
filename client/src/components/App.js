@@ -34,17 +34,19 @@ function App() {
   // }
 
   return (
-    <div className="App">
+    <div className="App" style={{padding:"2rem"}}>
 
       <Header isLogin={isLogin} user={user} />
       <Routes>
-        <Route path="/" element={<ProducList isLogin={isLogin} user={user}/>} />
-        <Route path="/login" element={isLogin?
+        <Route path="/" element={<ProducList isLogin={isLogin} user={user} />} />
+        <Route path="/login" element={isLogin ?
           <Activity onLogout={setUser} setIsLogin={setIsLogin} /> :
-           <LoginForm onLogin={setUser} setIsLogin={setIsLogin} />} 
-          />
-         <Route path="/signup" element={<SignupForm setUser={setUser} setIsLogin={setIsLogin}/>}/>
-         <Route path="/product-reviews" element={<ProductReviews user={user}/>}/>
+          <LoginForm onLogin={setUser} setIsLogin={setIsLogin} />}
+        />
+        {/* {isLogin ? <Route path="/activities" element={<Activity onLogout={setUser} setIsLogin={setIsLogin} />} /> :
+          <Route path="/login" element={<LoginForm onLogin={setUser} setIsLogin={setIsLogin} />} />} */}
+        <Route path="/signup" element={<SignupForm setUser={setUser} setIsLogin={setIsLogin} />} />
+        <Route path="/product-reviews" element={<ProductReviews user={user} />} />
       </Routes>
 
     </div>

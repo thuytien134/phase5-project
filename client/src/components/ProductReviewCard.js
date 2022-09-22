@@ -25,7 +25,7 @@ function handleDelete(){
         <div>
 
             <Card>
-                <Card.Header as="h5">Review by: {review.user.username} --------at:{review.created_at}</Card.Header>
+                <Card.Header as="h5">Reviewed by: {review.user.username} --------at:{review.created_at}</Card.Header>
                 <Card.Body>
                     <Stack spacing={1}>
                         <Rating name="read-only" readOnly value={review.rating} />
@@ -33,11 +33,12 @@ function handleDelete(){
                     <Card.Text>
                         {review.comment}
                     </Card.Text>
-                    {user.username === review.user.username ?
+                    {(!user) || user.username !== review.user.username  ?"":
                         <div>
                             <Button style={{ backgroundColor: "moccasin", color: "black" }}>✎</Button>
                             <Button style={{ backgroundColor: "moccasin" }} onClick={handleDelete}>🗑</Button>
-                        </div> :""}
+                        </div> }
+                      
                 </Card.Body>
             </Card>
         </div>

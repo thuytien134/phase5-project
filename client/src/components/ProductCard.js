@@ -8,11 +8,15 @@ import { useNavigate } from "react-router-dom";
 
 export default function ProductCard({ product, isLogin, user }) {
   const [showAlert, setShowAlert] = useState(false)
+  const [successfulAddToBag, setSuccessfulAddToBag] =useState(false)
   const navigate = useNavigate()
 
   function handleBagClick() {
     if (isLogin === false)
-      setShowAlert(true)
+    { setShowAlert(true)
+    // setSuccessfulAddToBag(false)
+    }
+      
     else
       fetch("/product-in-carts", {
         method: "POST",
@@ -24,14 +28,16 @@ export default function ProductCard({ product, isLogin, user }) {
           product_id: product.id
         })
       }).then(r => r.json())
+      .then(setSuccessfulAddToBag(true))
+      
   }
 
-  function handleReviewClick(e){
-    if (isLogin=== false)
-    setShowAlert(true)
-    else
+  function handleReviewClick(){
+    // if (isLogin=== false)
+    // setShowAlert(true)
+    // else
     navigate("/product-reviews",{state:{product}})
-    // console.log(product)
+
   }
   return (
     <div >
@@ -48,6 +54,9 @@ export default function ProductCard({ product, isLogin, user }) {
           </Card.Body>
           {showAlert ? <Alert variant="warning" style={{ display: "flex", alignItems: "center", justifyContent: "space-around" }}>Please log in !!!
             <Button variant="warning" onClick={() => setShowAlert(false)}>x</Button>
+          </Alert> : ""}
+          {successfulAddToBag ? <Alert variant="success" style={{ display: "flex", alignItems: "center", justifyContent: "space-around" }}>Added to bag successful !
+            <Button variant="success" onClick={() => setSuccessfulAddToBag(false)}>x</Button>
           </Alert> : ""}
         </Card.Body>
       </Card>

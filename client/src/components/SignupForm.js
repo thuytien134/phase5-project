@@ -32,6 +32,7 @@ export default function SignupForm({setUser,setIsLogin}) {
           if (r.ok) {
             r.json().then((user) => {
             navigate('/login')
+          
             setIsLogin(true)
             setUser(user)});
           } else {

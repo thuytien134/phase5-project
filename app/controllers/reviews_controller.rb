@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
         if review.valid?
             render json: review, status: :created
         else
-            render json: {errors: review.errors.full_messages}, status: :unprocessable_entity
+            render json: {errors: "Invalid review"}, status: :unprocessable_entity
         end
 
     end
