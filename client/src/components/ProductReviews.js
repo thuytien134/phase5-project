@@ -26,11 +26,17 @@ export default function ProductReviews({ user }) {
     function handleAddReview(newReview) {
         setReviews([...reviews,newReview])
     }
+    function handleUpdateReview(updatedReview){
+        const updatedReviews = reviews.map( review => {
+           return review.id === updatedReview.id ? updatedReview : review
+        })
+        setReviews(updatedReviews)
+    }
     return (
         <div>
 
             {displayedReviews.map(review => {
-                return <ProductReviewCard key={review.id} review={review} user={user} onDeleteReview={handleDeleteReview} />
+                return <ProductReviewCard key={review.id} review={review} user={user} onDeleteReview={handleDeleteReview} onUpdateReview={handleUpdateReview}/>
             })}
             < ReviewForm curentProduct={curentProduct} user={user} onAddReview={handleAddReview}/>
         </div>
