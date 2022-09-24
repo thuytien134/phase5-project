@@ -17,7 +17,7 @@ const categories = products.map(product => product.category.name).filter((el,i,a
   const displayedProducts = products.filter(
     product =>  product.category.name === selectedCategory
   )
-  console.log(products)
+
   return (
     <>
       <div style={{ display: "flex", justifyContent: "flex-start" }}>

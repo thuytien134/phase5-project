@@ -28,10 +28,7 @@ function App() {
     });
   }, []);
 
-  // function handleAddProductInBag(newProduct) {
-  //   const updatedProductInBagArr = [...productInBags, newProduct];
-  //   setProductInBags(updatedProductInBagArr);
-  // }
+
 
   return (
     <div className="App" style={{padding:"2rem"}}>
