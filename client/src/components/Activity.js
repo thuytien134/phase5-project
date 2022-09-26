@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 
 
-export default function Activity({ onLogout, setIsLogin }) {
+export default function Activity() {
   const [value, setValue] = React.useState(0);
   const [showBag, setShowBag] = useState(true)
 
@@ -25,7 +25,7 @@ export default function Activity({ onLogout, setIsLogin }) {
         >
           <Tab icon={"🛍️ bag"} aria-label="bag" onClick={() => setShowBag(true)} />
           <Tab icon={"reviews"} aria-label="reviews" onClick={() => setShowBag(false)} />
-          <Logout onLogout={onLogout} setIsLogin={setIsLogin} />
+          <Logout  />
         </Tabs>
 
         {showBag ? <ProductInBag/> : <Reviews />}

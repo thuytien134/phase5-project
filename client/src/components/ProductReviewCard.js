@@ -3,10 +3,12 @@ import { Card, Button } from 'react-bootstrap'
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import EditReview from './EditReview';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { UserContext } from './context/User';
 
-export default function ProductReviewCard({ review, user, onDeleteReview ,onUpdateReview}) {
+export default function ProductReviewCard({ review, onDeleteReview ,onUpdateReview}) {
     const [isEditing, setIsEditing] = useState(false)
+    const {user} = useContext(UserContext)
     //     //    formatter = new Intl.DateTimeFormat("en-GB", {
     //         year: "numeric",
     //         month: "long",

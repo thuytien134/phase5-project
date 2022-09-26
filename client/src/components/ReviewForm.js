@@ -1,14 +1,16 @@
 import React from 'react'
 import { Rating, Typography } from '@mui/material'
 import { Alert, Button } from 'react-bootstrap'
-import { useState } from 'react'
+import { useState,useContext } from 'react'
+import { UserContext } from './context/User'
 
 
-export default function ReviewForm({ curentProduct, user, onAddReview }) {
+export default function ReviewForm({ curentProduct, onAddReview }) {
     const [showAlert, setShowAlert] = useState(false)
     const [rating, setRating] = useState(0)
     const [comment, setComment] = useState("")
     const [errors, setErrors] = useState([])
+    const {user} = useContext(UserContext)
 
 
     function handleSubmit(e) {

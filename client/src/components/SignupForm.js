@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
-
+import { UserContext } from './context/User';
+import { IsLoginContext } from './context/IsLogin';
 import { Alert } from 'react-bootstrap';
 
 
 
-export default function SignupForm({setUser,setIsLogin}) {
+export default function SignupForm() {
+  const {setUser} = useContext(UserContext)
+  const {setIsLogin} = useContext(IsLoginContext)
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");

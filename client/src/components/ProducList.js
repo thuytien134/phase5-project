@@ -1,10 +1,11 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
 import ProductCard from './ProductCard';
-
 import CategoryFilter from './CategoryFilter';
 
-export default function ProducList({isLogin,user}) {
+
+export default function ProducList() {
+
   const [products, setProducts] = useState([])
   const [selectedCategory, setSelectedCategory] = useState("Lipstick");
   useEffect(() => {
@@ -24,7 +25,7 @@ const categories = products.map(product => product.category.name).filter((el,i,a
         <CategoryFilter selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} categories={categories}/>
         <div style= {{display:"flex",flexWrap:"wrap", alignItems:"flex-end",justifyContent:"space-around"}}>
           {displayedProducts.map(product => {
-            return <ProductCard key={product.id} product={product} isLogin={isLogin} user={user}/>
+            return <ProductCard key={product.id} product={product} />
           })}
         </div>
       </div>

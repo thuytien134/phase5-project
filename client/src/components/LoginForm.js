@@ -2,13 +2,16 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useState } from 'react';
+import { useState,useContext } from 'react';
 import { Alert } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from './context/User';
+import { IsLoginContext } from './context/IsLogin';
 
 
-export default function LoginForm({ onLogin, setIsLogin }) {
-
+export default function LoginForm() {
+    const {setUser}= useContext(UserContext)
+    const {setIsLogin}= useContext(IsLoginContext)
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
@@ -28,7 +31,7 @@ export default function LoginForm({ onLogin, setIsLogin }) {
             setIsLoading(false);
             if (r.ok) {
                 r.json().then((user) => {
-                    onLogin(user)
+                    setUser(user)
                     setIsLogin(true);
                 });
             } else {

@@ -2,11 +2,15 @@ import React from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Alert } from "react-bootstrap";
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "./context/User";
+import { IsLoginContext } from "./context/IsLogin";
 
 
-export default function ProductCard({ product, isLogin, user }) {
+export default function ProductCard({ product }) {
+  const {user} = useContext(UserContext)
+  const {isLogin} = useContext(IsLoginContext)
   const [showAlert, setShowAlert] = useState(false)
   const [successfulAddToBag, setSuccessfulAddToBag] =useState(false)
   const navigate = useNavigate()

@@ -1,16 +1,20 @@
-import React from "react";
+
 import Header from "./Header";
 import { Routes, Route } from "react-router-dom"
 import ProducList from "./ProducList";
 import LoginForm from "./LoginForm";
-import { useEffect, useState } from 'react'
+import { useEffect, useState,useContext } from 'react'
 import Activity from "./Activity";
 import SignupForm from "./SignupForm";
 import ProductReviews from "./ProductReviews";
+import { UserContext } from "./context/User";
+import { IsLoginContext } from "./context/IsLogin";
+
+
 
 function App() {
-  const [user, setUser] = useState(null);
-  const [isLogin, setIsLogin] = useState(false)
+  const { setUser } = useContext(UserContext);
+  const {isLogin, setIsLogin} = useContext(IsLoginContext)
 
 
 
@@ -31,19 +35,17 @@ function App() {
 
 
   return (
-    <div className="App" style={{padding:"2rem"}}>
+    <div className="App" style={{ padding: "2rem" }}>
 
-      <Header isLogin={isLogin} user={user} />
+      <Header />
       <Routes>
-        <Route path="/" element={<ProducList isLogin={isLogin} user={user} />} />
-        <Route path="/login" element={isLogin ?
-          <Activity onLogout={setUser} setIsLogin={setIsLogin} /> :
-          <LoginForm onLogin={setUser} setIsLogin={setIsLogin} />}
-        />
-        {/* {isLogin ? <Route path="/activities" element={<Activity onLogout={setUser} setIsLogin={setIsLogin} />} /> :
-          <Route path="/login" element={<LoginForm onLogin={setUser} setIsLogin={setIsLogin} />} />} */}
-        <Route path="/signup" element={<SignupForm setUser={setUser} setIsLogin={setIsLogin} />} />
-        <Route path="/product-reviews" element={<ProductReviews user={user} />} />
+        <Route path="/" element={<ProducList />} />
+          <Route path="/login" element={isLogin ?
+            <Activity /> :
+            <LoginForm  />}
+          />
+        <Route path="/signup" element={<SignupForm   />} />
+        <Route path="/product-reviews" element={<ProductReviews  />} />
       </Routes>
 
     </div>

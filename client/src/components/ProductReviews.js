@@ -4,7 +4,9 @@ import { useLocation } from 'react-router-dom';
 import ProductReviewCard from './ProductReviewCard';
 import ReviewForm from './ReviewForm';
 
-export default function ProductReviews({ user }) {
+
+export default function ProductReviews() {
+  
     const [reviews, setReviews] = useState([])
     const location = useLocation();
     const curentProduct = location.state.product
@@ -36,9 +38,9 @@ export default function ProductReviews({ user }) {
         <div>
 
             {displayedReviews.map(review => {
-                return <ProductReviewCard key={review.id} review={review} user={user} onDeleteReview={handleDeleteReview} onUpdateReview={handleUpdateReview}/>
+                return <ProductReviewCard key={review.id} review={review}  onDeleteReview={handleDeleteReview} onUpdateReview={handleUpdateReview}/>
             })}
-            < ReviewForm curentProduct={curentProduct} user={user} onAddReview={handleAddReview}/>
+            < ReviewForm curentProduct={curentProduct} onAddReview={handleAddReview}/>
         </div>
     )
 }
