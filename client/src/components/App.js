@@ -45,7 +45,7 @@ function App() {
             <LoginForm  />}
           />
         <Route path="/signup" element={<SignupForm   />} />
-        <Route path="/product-reviews" element={<ProductReviews  />} />
+        <Route path="/product/:id/reviews" element={<ProductReviews  />} />
       </Routes>
 
     </div>

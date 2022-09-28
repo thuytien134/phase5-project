@@ -18,11 +18,11 @@ function handleUpdateReview(updatedReview){
 setIsEditing(false)
 onUpdateReview(updatedReview)
 }
- 
+ console.log(review)
 
     function handleDelete() {
 
-        fetch(`reviews/${review.id}`, {
+        fetch(`/reviews/${review.id}`, {
             method: "DELETE",
         }).then((r) => {
             if (r.ok) {

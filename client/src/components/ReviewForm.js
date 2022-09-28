@@ -5,7 +5,7 @@ import { useState,useContext } from 'react'
 import { UserContext } from './context/User'
 
 
-export default function ReviewForm({ curentProduct, onAddReview }) {
+export default function ReviewForm({ curentProductId, onAddReview }) {
     const [showAlert, setShowAlert] = useState(false)
     const [rating, setRating] = useState(0)
     const [comment, setComment] = useState("")
@@ -30,7 +30,7 @@ export default function ReviewForm({ curentProduct, onAddReview }) {
                 },
                 body: JSON.stringify({
                     user_id: user.id,
-                    product_id: curentProduct.id,
+                    product_id: curentProductId,
                     rating: rating,
                     comment: comment
                 })

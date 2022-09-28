@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation,useParams } from 'react-router-dom';
 import ProductReviewCard from './ProductReviewCard';
 import ReviewForm from './ReviewForm';
 
@@ -8,17 +8,19 @@ import ReviewForm from './ReviewForm';
 export default function ProductReviews() {
   
     const [reviews, setReviews] = useState([])
-    const location = useLocation();
-    const curentProduct = location.state.product
+    // const location = useLocation();
+    // const curentProduct = location.state.product
+    let {id} =useParams()
+// console.log(id)
     useEffect(() => {
         fetch("/reviews")
             .then((r) => r.json())
             .then((data) => setReviews(data));
     }, []);
     const displayedReviews = reviews.filter(review => {
-        return review.product_id === curentProduct.id
+        return review.product_id === Number(id)
     })
-    // debugger
+
     function handleDeleteReview(id) {
         const updatedReviews = reviews.filter(review => {
             return review.id !== id
@@ -40,7 +42,7 @@ export default function ProductReviews() {
             {displayedReviews.map(review => {
                 return <ProductReviewCard key={review.id} review={review}  onDeleteReview={handleDeleteReview} onUpdateReview={handleUpdateReview}/>
             })}
-            < ReviewForm curentProduct={curentProduct} onAddReview={handleAddReview}/>
+            < ReviewForm curentProductId={id} onAddReview={handleAddReview}/>
         </div>
     )
 }

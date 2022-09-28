@@ -40,7 +40,7 @@ export default function ProductCard({ product }) {
     // if (isLogin=== false)
     // setShowAlert(true)
     // else
-    navigate("/product-reviews",{state:{product}})
+    navigate(`/product/${product.id}/reviews`,{state:{product}})
 
   }
   return (
