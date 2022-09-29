@@ -4,19 +4,23 @@ import { useParams } from 'react-router-dom';
 import { ReviewsContext } from './context/Reviews';
 import ProductReviewCard from './ProductReviewCard';
 import ReviewForm from './ReviewForm';
+import { ProductsContext } from './context/Products';
 
 
 
 export default function ProductReviews() {
    
     const {reviews, setReviews} = useContext(ReviewsContext)
+    const {products} = useContext(ProductsContext)
     
     let { id } = useParams()
    
     const displayedReviews = reviews.filter(review => {
         return review.product.id === Number(id)
     })
-
+    // const curentProduct = products.filter(product => product.id === Number(id))[0]
+    // // debugger
+    // console.log(curentProduct.id)
  
     function handleAddReview(newReview) {
         setReviews([...reviews, newReview])

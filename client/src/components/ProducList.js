@@ -9,11 +9,11 @@ export default function ProducList() {
   const {products,setProducts} = useContext(ProductsContext)
   // const [products, setProducts] = useState([])
   const [selectedCategory, setSelectedCategory] = useState("Lipstick");
-  useEffect(() => {
-    fetch("/products")
-      .then((r) => r.json())
-      .then((data) => setProducts(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("/products")
+  //     .then((r) => r.json())
+  //     .then((data) => setProducts(data));
+  // }, []);
 const categories = products.map(product => product.category.name).filter((el,i,ar)=>ar.indexOf(el)===i)
    
   const displayedProducts = products.filter(

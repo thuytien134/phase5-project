@@ -1,19 +1,22 @@
 import React from 'react'
 import { Card,Button } from 'react-bootstrap'
 import { Stack,Rating } from '@mui/material'
+import { useContext } from 'react'
+import { ReviewsContext } from './context/Reviews'
 
 
 export default function MyReviewsCard({review}) {
-//   function handleDelete() {
+  const {handleDeleteReview} = useContext(ReviewsContext)
+  function handleDelete() {
 
-//     fetch(`/reviews/${review.id}`, {
-//         method: "DELETE",
-//     }).then((r) => {
-//         if (r.ok) {
-//             onDeleteReview(review.id);
-//         }
-//     });
-// }
+    fetch(`/reviews/${review.id}`, {
+        method: "DELETE",
+    }).then((r) => {
+        if (r.ok) {
+            handleDeleteReview(review.id);
+        }
+    });
+}
    
   return (
     <div>
@@ -30,7 +33,7 @@ export default function MyReviewsCard({review}) {
                             created at:{review.created_at}
                         </Card.Text>
                         <div>
-                            <Button style={{ backgroundColor: "moccasin" }} >🗑</Button>
+                            <Button style={{ backgroundColor: "moccasin" }} onClick={handleDelete} >🗑</Button>
                         </div>
 
                 </Card.Body>
