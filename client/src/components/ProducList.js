@@ -1,12 +1,13 @@
 import React from 'react'
-import { useState, useEffect} from 'react';
+import { useState, useEffect,useContext} from 'react';
 import ProductCard from './ProductCard';
 import CategoryFilter from './CategoryFilter';
+import { ProductsContext } from './context/Products';
 
 
 export default function ProducList() {
-
-  const [products, setProducts] = useState([])
+  const {products,setProducts} = useContext(ProductsContext)
+  // const [products, setProducts] = useState([])
   const [selectedCategory, setSelectedCategory] = useState("Lipstick");
   useEffect(() => {
     fetch("/products")

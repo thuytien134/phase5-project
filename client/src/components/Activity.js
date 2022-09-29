@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 
 
-export default function Activity() {
+export default function Activity({reviews}) {
   const [value, setValue] = React.useState(0);
   const [showBag, setShowBag] = useState(true)
 
@@ -28,7 +28,7 @@ export default function Activity() {
           <Logout  />
         </Tabs>
 
-        {showBag ? <ProductInBag/> : <Reviews />}
+        {showBag ? <ProductInBag/> : <Reviews reviews={reviews}/>}
     
 
     </div>

@@ -5,10 +5,15 @@ import Stack from '@mui/material/Stack';
 import EditReview from './EditReview';
 import { useState, useContext } from 'react';
 import { UserContext } from './context/User';
+import { ReviewsContext } from './context/Reviews';
 
-export default function ProductReviewCard({ review, onDeleteReview ,onUpdateReview}) {
+
+export default function ProductReviewCard({ review,onUpdateReview}) {
     const [isEditing, setIsEditing] = useState(false)
     const {user} = useContext(UserContext)
+    const {handleDeleteReview} = useContext(ReviewsContext)
+
+    // const {products} = useContext(ProductsContext)
     //     //    formatter = new Intl.DateTimeFormat("en-GB", {
     //         year: "numeric",
     //         month: "long",
@@ -18,7 +23,7 @@ function handleUpdateReview(updatedReview){
 setIsEditing(false)
 onUpdateReview(updatedReview)
 }
- console.log(review)
+
 
     function handleDelete() {
 
@@ -26,7 +31,7 @@ onUpdateReview(updatedReview)
             method: "DELETE",
         }).then((r) => {
             if (r.ok) {
-                onDeleteReview(review.id);
+                handleDeleteReview(review.id);
             }
         });
     }
