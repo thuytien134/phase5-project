@@ -14,7 +14,7 @@ export default function Header() {
         //  style={{display: "flex", borderBottom: "3px solid", justifyContent:"space-between", alignItems:"center"}}
         >
             <div style={{display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-evenly"}}>
-                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQx-lOHZbflZfExK0eWJ5dDhYD6GcZTPojcKx_BAdeZnAICiD-N" alt="logo"
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQDb8YyQwFznhZ5QfMw71jUVWmywoPFAzCZohM-4_TLxFhKWq4C" alt="logo"
                     style={{ height: "120px", width: "120px" }} />
                 <h1>Thuy Shop</h1>
             </div>

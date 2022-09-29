@@ -3,16 +3,16 @@ import {  Nav, Col } from 'react-bootstrap';
 
 export default function CategoryFilter({ selectedCategory, setSelectedCategory, categories }) {
     return (
-        <div>
+        <div style={{padding:"solid",backgroundColor:"lightblue"}}>
             {categories.map((category,index) => {
-                return <Col sm={3} key={index}  >
+                return <ul  key={index}  >
                     <Nav variant="pills" className='block'>
-                        <Nav.Item  >
-                            <Nav.Link eventKey="first"
+                        <li  >
+                            <Nav.Link
                              onClick={() => setSelectedCategory(category)}>{category}</Nav.Link>  
-                        </Nav.Item>
+                        </li>
                     </Nav>
-                </Col>
+                </ul>
             })}
            
         </div>

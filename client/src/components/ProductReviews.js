@@ -32,7 +32,7 @@ export default function ProductReviews() {
         setReviews(updatedReviews)
     }
     return (
-        <div>
+        <div style={{paddingTop:"1rem"}}>
             {/* <img variant="top" style={{ height: "200px", width: "200px" }} src={curentProductImg} /> */}
             <div>
                 {displayedReviews.map(review => {

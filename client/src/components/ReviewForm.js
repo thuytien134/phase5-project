@@ -44,15 +44,15 @@ export default function ReviewForm({ curentProductId, onAddReview }) {
     }
     return (
         <div>
-            <form onSubmit={handleSubmit} >
-                <label> Your reviews are important....</label>
-                <input type="text" placeholder='your review here...' value={comment} onChange={(e) => setComment(e.target.value)} />
+            <form onSubmit={handleSubmit} style={{padding:"20px",backgroundColor:"mistyrose"}} >
+                <label> Your reviews are important....</label><br/>
+                <input type="text" placeholder='your review here...' value={comment} onChange={(e) => setComment(e.target.value)} style={{height:"100px",width:"100%"}}/><br/>
                 <Typography component="legend">How would you rate for this product?</Typography>
                 <Rating
                     name="simple-controlled"
                     value={rating}
                     onChange={(e, newRating) => setRating(newRating)}
-                />
+                /><br/>
                 <button>post</button>
             </form>
             {showAlert ? <Alert variant="warning" style={{ display: "flex", alignItems: "center", justifyContent: "space-around" }}>Please log in !!!

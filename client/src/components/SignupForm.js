@@ -51,20 +51,23 @@ export default function SignupForm() {
             style={{ paddingLeft: "30%", paddingRight: "30%", paddingTop: "30px", display: "flex", flexDirection: "column" }}>
                 <label>User name: <br/>
                     <input
+                    style={{width:"100%"}}
                     value={username}
                     onChange={(e)=> setUsername(e.target.value)}
                     placeholder='enter username'/>
                 </label>
                 <label>Password: <br/>
                     <input 
+                    style={{width:"100%"}}
                     type="password"
                     value={password}
                     onChange={(e)=> setPassword(e.target.value)}
                     placeholder='enter password'/>
 
                 </label>
-                <label>Confirm Password: 
+                <label>Confirm Password: <br/>
                     <input
+                    style={{width:"100%"}}
                     type="password"
                     value={passwordConfirmation}
                     onChange={(e)=>setPasswordConfirmation(e.target.value)}
@@ -72,7 +75,7 @@ export default function SignupForm() {
                 </label>
                 {errors.length === 0 ? "" : <Alert  >{errors}</Alert>}
                  <br/>
-                <button> Sign up</button>
+                <button style={{backgroundColor:"turquoise"}}> Sign up</button>
             </form>
         </div>
     )

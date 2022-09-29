@@ -48,7 +48,7 @@ function App() {
 
 
   return (
-    <div className="App" style={{ padding: "1rem" }}>
+    <div className="App" style={{ padding: "1rem",backgroundColor:"aliceblue" }}>
 
       <Header />
       <Routes>
