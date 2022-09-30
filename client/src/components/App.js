@@ -13,18 +13,21 @@ import { ProductsContext } from "./context/Products";
 import { ReviewsContext } from "./context/Reviews";
 
 
+
+
+
 function App() {
   const { setUser } = useContext(UserContext);
   const { isLogin, setIsLogin } = useContext(IsLoginContext)
   const { setReviews } = useContext(ReviewsContext)
   const { setProducts } = useContext(ProductsContext)
-
+ 
   useEffect(() => {
     fetch("/products")
       .then((r) => r.json())
       .then((data) => setProducts(data));
   }, []);
-  
+
   useEffect(() => {
     fetch("/reviews")
       .then((r) => r.json())
@@ -48,7 +51,7 @@ function App() {
 
 
   return (
-    <div className="App" style={{ padding: "1rem",backgroundColor:"aliceblue", color:"cadetblue" }}>
+    <div className="App" style={{ padding: "1rem", backgroundColor: "aliceblue", color: "cadetblue" }}>
 
       <Header />
       <Routes>

@@ -15,11 +15,6 @@ export default function ProductInBag() {
         const updatedProductInBagArr = productInBags.filter((p) => p.id !== id);
         setProductInBags(updatedProductInBagArr);
     }
-
-    // function handleAddProductInBag(newProduct) {
-    //     const updatedProductInBagArr = [...productInBags, newProduct];
-    //     setProductInBags(updatedProductInBagArr);
-    //   }
     return (
         <div >
             <div

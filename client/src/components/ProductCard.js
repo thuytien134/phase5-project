@@ -8,6 +8,7 @@ import { UserContext } from "./context/User";
 import { IsLoginContext } from "./context/IsLogin";
 
 
+
 export default function ProductCard({ product }) {
   const {user} = useContext(UserContext)
   const {isLogin} = useContext(IsLoginContext)
@@ -15,10 +16,11 @@ export default function ProductCard({ product }) {
   const [successfulAddToBag, setSuccessfulAddToBag] =useState(false)
   const navigate = useNavigate()
 
+
+
   function handleBagClick() {
     if (isLogin === false)
     { setShowAlert(true)
-    // setSuccessfulAddToBag(false)
     }
       
     else
@@ -37,11 +39,7 @@ export default function ProductCard({ product }) {
   }
 
   function handleReviewClick(){
-    // if (isLogin=== false)
-    // setShowAlert(true)
-    // else
     navigate(`/product/${product.id}/reviews`,{state:{product}})
-
   }
   return (
     <div style={{height:"31rem", padding:"1rem"}}>
