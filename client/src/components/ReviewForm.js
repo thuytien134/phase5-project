@@ -44,7 +44,7 @@ export default function ReviewForm({ curentProductId, onAddReview }) {
     }
     return (
         <div>
-            <form onSubmit={handleSubmit} style={{padding:"20px",backgroundColor:"mistyrose"}} >
+            <form onSubmit={handleSubmit} style={{padding:"20px",backgroundColor:"ghostwhite",width:"70%"}} >
                 <label> Your reviews are important....</label><br/>
                 <input type="text" placeholder='your review here...' value={comment} onChange={(e) => setComment(e.target.value)} style={{height:"100px",width:"100%"}}/><br/>
                 <Typography component="legend">How would you rate for this product?</Typography>

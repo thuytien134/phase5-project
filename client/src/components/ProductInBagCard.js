@@ -13,7 +13,7 @@ export default function ProductInBagCard({ product,id ,onDeleteProducInBag}) {
           });
     }
     return (
-        <div>
+        <div style={{padding:"0.5rem"}}>
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={product.image_url} width={250} height={250} />
                 <Card.Body>

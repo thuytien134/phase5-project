@@ -18,7 +18,7 @@ const categories = products.map(product => product.category.name).filter((el,i,a
 
   return (
     < >
-      <div style={{ display: "flex", justifyContent: "flex-start", padding:"1rem"}}>
+      <div style={{ display: "flex", justifyContent: "flex-start", padding:"1rem",paddingTop:"1rem",paddingLeft:"0.1rem"}}>
         <CategoryFilter selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} categories={categories}/>
         <div style= {{display:"flex",flexWrap:"wrap", alignItems:"flex-end",justifyContent:"space-around"}}>
           {displayedProducts.map(product => {

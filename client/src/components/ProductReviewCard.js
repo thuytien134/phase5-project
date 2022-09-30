@@ -37,9 +37,10 @@ onUpdateReview(updatedReview)
     }
 
     return (
-        <div>
-
-            <Card>
+        <div
+         style={{padding:"1rem",width:"70%"}}
+         >
+            <Card >
                 <Card.Header as="h5">Reviewed by: {review.user.username} --------at:{review.created_at}</Card.Header>
                 <Card.Body>
                     {isEditing ? <EditReview review={review} handleUpdateReview={handleUpdateReview}/> : <>

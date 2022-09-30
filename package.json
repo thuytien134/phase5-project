@@ -21,6 +21,7 @@
     "@mui/material": "^5.10.5",
     "@mui/styled-engine-sc": "^5.10.3",
     "bootstrap": "^5.2.1",
+    "gsap": "^3.11.2",
     "react-bootstrap": "^2.5.0",
     "react-router-dom": "^6.3.0",
     "styled-components": "^5.3.5"

@@ -19,8 +19,8 @@ export default function MyReviewsCard({review}) {
 }
    
   return (
-    <div>
-       <Card>
+    <div style={{padding:"0.5rem",width:"50rem",paddingLeft:"20%"}}>
+       <Card >
                 <Card.Header as="h5">{review.product.name}</Card.Header>
                 <Card.Body>
                   <Card.Img variant="top" src={review.product.image_url} style={{width:"200px",height:"200px"}} />
@@ -29,8 +29,8 @@ export default function MyReviewsCard({review}) {
                             <Rating name="read-only" readOnly value={review.rating} />
                         </Stack>
                         <Card.Text>
-                            {review.comment}<br/>
-                            created at:{review.created_at}
+                            Comment: {review.comment}<br/>
+                            Created at:{review.created_at}
                         </Card.Text>
                         <div>
                             <Button style={{ backgroundColor: "moccasin" }} onClick={handleDelete} >🗑</Button>

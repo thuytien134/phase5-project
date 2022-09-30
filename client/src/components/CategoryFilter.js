@@ -1,11 +1,11 @@
 import React from 'react'
 import {  Nav, Col } from 'react-bootstrap';
 
-export default function CategoryFilter({ selectedCategory, setSelectedCategory, categories }) {
+export default function CategoryFilter({  setSelectedCategory, categories }) {
     return (
-        <div style={{padding:"solid",backgroundColor:"lightblue"}}>
+        <div style={{backgroundColor:"lightblue",border:"solid",height:"10rem"}}>
             {categories.map((category,index) => {
-                return <ul  key={index}  >
+                return <ul  key={index}  style={{paddingLeft:"0.5rem"}}>
                     <Nav variant="pills" className='block'>
                         <li  >
                             <Nav.Link

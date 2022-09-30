@@ -44,8 +44,8 @@ export default function ProductCard({ product }) {
 
   }
   return (
-    <div >
-      <Card style={{ width: '18rem' }}>
+    <div style={{height:"31rem", padding:"1rem"}}>
+      <Card style={{ width: '18rem'}}>
         <Card.Img variant="top" src={product.image_url} width={250} height={250} />
         <Card.Body>
           <Card.Title>{product.name}</Card.Title>
@@ -59,7 +59,7 @@ export default function ProductCard({ product }) {
           {showAlert ? <Alert variant="warning" style={{ display: "flex", alignItems: "center", justifyContent: "space-around" }}>Please log in !!!
             <Button variant="warning" onClick={() => setShowAlert(false)}>x</Button>
           </Alert> : ""}
-          {successfulAddToBag ? <Alert variant="success" style={{ display: "flex", alignItems: "center", justifyContent: "space-around" }}>Added to bag successful !
+          {successfulAddToBag ? <Alert variant="success" style={{ display: "flex", alignItems: "center", justifyContent: "space-around",height:"3rem"}}>Added to bag successfully !
             <Button variant="success" onClick={() => setSuccessfulAddToBag(false)}>x</Button>
           </Alert> : ""}
         </Card.Body>
