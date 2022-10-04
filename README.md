@@ -15,7 +15,7 @@ And you can run React in another terminal with:
 `npm start --prefix client`
 
 ### Data structure
-![ERD](https://lucid.app/lucidchart/49e0e834-1c5e-405c-a175-6ec0112ae9ca/edit?viewport_loc=257%2C-126%2C1770%2C1186%2C0_0&invitationId=inv_7243c328-9b26-473e-af75-6b7ae5d5f5d0#)
+![ERD](/Users/tiennguyen/Development/code4/phase5-project/Database ER diagram (crow's foot).png)
 
 
 * Ruby version: 
