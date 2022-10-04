@@ -55,7 +55,7 @@ export default function ReviewForm({ curentProductId, onAddReview }) {
                 /><br/>
                 <button>post</button>
             </form>
-            {showAlert ? <Alert variant="warning" style={{ display: "flex", alignItems: "center", justifyContent: "space-around" }}>Please log in !!!
+            {showAlert ? <Alert variant="warning" style={{ display: "flex", alignItems: "center", justifyContent: "space-around",width:"70%" }}>Please log in !!!
                 <Button variant="warning" onClick={() => setShowAlert(false)}>x</Button>
             </Alert> : ""}
             {errors.length === 0 ? "" : <Alert variant='warning' style={{ display: "flex", alignItems: "center", justifyContent: "space-around" }}>{errors}

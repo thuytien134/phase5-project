@@ -15,8 +15,6 @@ import Contact from "./Contact";
 
 
 
-
-
 function App() {
   const { setUser } = useContext(UserContext);
   const { isLogin, setIsLogin } = useContext(IsLoginContext)
@@ -57,7 +55,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<ProducList />} />
-        <Route path="/contact" element={<Contact/>}/>
+        <Route path="/contact-us" element={<Contact/>}/>
         <Route path="/product/:id/reviews" element={<ProductReviews />} />
         <Route path="/login" element={isLogin ?
           <Activity /> :

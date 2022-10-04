@@ -18,9 +18,9 @@ export default function Header() {
         })
     },[])
     useEffect(()=>{
-        gsap.to(logo,{
-            x:100,
-            duration:1,
+        gsap.from(logo,{
+            x:-200,
+            duration:2,
         })
     },[])
     
@@ -37,7 +37,7 @@ export default function Header() {
             <nav style={{border:"solid",background:"antiquewhite",display:"flex",flexDirection:"row",justifyContent:"flex-end",padding:"0.5rem",paddingRight:"1rem"}}>
                 <NavLink to="/" style={{paddingRight:"1.5rem"}}>Home </NavLink>
                 <NavLink to="/login" style={{paddingRight:"1.5rem"}}> {isLogin ? `Hi ${user.username}` : 'Log in'}</NavLink>
-                <NavLink to="/contact" >Contact us</NavLink>
+                <NavLink to="/contact-us" >Contact us</NavLink>
             </nav>
         </div>
     )

@@ -15,7 +15,9 @@ And you can run React in another terminal with:
 `npm start --prefix client`
 
 ### Data structure
-![ERD](https://file%2B.vscode-resource.vscode-cdn.net/Users/tiennguyen/Downloads/Database%20ER%20diagram%20%28crow%27s%20foot%29.png?version%3D1664864720566)
+![ERD](https://lucid.app/lucidchart/49e0e834-1c5e-405c-a175-6ec0112ae9ca/edit?viewport_loc=257%2C-126%2C1770%2C1186%2C0_0&invitationId=inv_7243c328-9b26-473e-af75-6b7ae5d5f5d0#)
+
+
 * Ruby version: 
 ruby-2.7.4
 * System dependencies
