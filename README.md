@@ -15,7 +15,7 @@ And you can run React in another terminal with:
 `npm start --prefix client`
 
 ### Data structure
-![ERD](/Users/tiennguyen/Development/code4/phase5-project/Database ER diagram (crow's foot).png)
+![ERD](./Database%20ER%20diagram%20(crow's%20foot).png)
 
 
 * Ruby version: 
