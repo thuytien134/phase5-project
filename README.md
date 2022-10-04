@@ -17,8 +17,8 @@ And you can run React in another terminal with:
 
 * Ruby version: 
 ruby-2.7.4
-* System dependencies
-i have install bcrypt gem in order to use Rails's `has_secure_password` to store and authenticate user login credentials securely
+* System dependencies: 
+i have install `bcrypt` gem in order to use Rails's `has_secure_password` to store and authenticate user login credentials securely
 
 * Deployment instructions:
 I have deployed on heroku, you can visit  here: [Thuy shop](https://thuy-shop-app.herokuapp.com/) 
