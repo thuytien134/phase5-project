@@ -1,7 +1,4 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 # Welcome to my Cosmetic shop project
 ## Introduction: 
 In this project, you are able to create an account, log in - log out your account, view all products of my shop, create-edit-delete review for each product.
@@ -21,16 +18,9 @@ And you can run React in another terminal with:
 * Ruby version: 
 ruby-2.7.4
 * System dependencies
+i have install bcrypt gem in order to use Rails's `has_secure_password` to store and authenticate user login credentials securely
 
-* Configuration
-
-* Database creation
-
-* Database initialization
+* Deployment instructions:
+I have deployed on heroku, you can visit  here: [Thuy shop](https://thuy-shop-app.herokuapp.com/) 
 
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
