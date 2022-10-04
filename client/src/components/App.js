@@ -11,6 +11,7 @@ import { UserContext } from "./context/User";
 import { IsLoginContext } from "./context/IsLogin";
 import { ProductsContext } from "./context/Products";
 import { ReviewsContext } from "./context/Reviews";
+import Contact from "./Contact";
 
 
 
@@ -56,6 +57,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<ProducList />} />
+        <Route path="/contact" element={<Contact/>}/>
         <Route path="/product/:id/reviews" element={<ProductReviews />} />
         <Route path="/login" element={isLogin ?
           <Activity /> :
