@@ -5,6 +5,8 @@ In this project, you are able to create an account, log in - log out your accoun
 ### To get set up, run:
 `bundle install`
 
+`rails db:create db:migrate db:seed`
+
 `npm install --prefix client`
 
 You can  run the rails server with:
