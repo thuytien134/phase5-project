@@ -8,23 +8,17 @@ import { UserContext } from './context/User';
 import { ReviewsContext } from './context/Reviews';
 
 
-export default function ProductReviewCard({ review,onUpdateReview}) {
+export default function ProductReviewCard({ review, onUpdateReview }) {
     const [isEditing, setIsEditing] = useState(false)
-    const {user} = useContext(UserContext)
-    const {handleDeleteReview} = useContext(ReviewsContext)
-
-    // const {products} = useContext(ProductsContext)
-    //     //    formatter = new Intl.DateTimeFormat("en-GB", {
-    //         year: "numeric",
-    //         month: "long",
-    //         day: "2-digit"
-    //       });
-function handleUpdateReview(updatedReview){
-setIsEditing(false)
-onUpdateReview(updatedReview)
-}
+    const { user } = useContext(UserContext)
+    const { handleDeleteReview } = useContext(ReviewsContext)
 
 
+    function handleUpdateReview(updatedReview) {
+        setIsEditing(false)
+        onUpdateReview(updatedReview)
+    }
+    const date = Date(review.created_at)
     function handleDelete() {
 
         fetch(`/reviews/${review.id}`, {
@@ -38,12 +32,13 @@ onUpdateReview(updatedReview)
 
     return (
         <div
-         style={{padding:"1rem",width:"70%"}}
-         >
+            style={{ padding: "1rem", width: "70%" }}
+        >
+            {/* {review.created_at} */}
             <Card >
-                <Card.Header as="h5">Reviewed by: {review.user.username} --------at:{review.created_at}</Card.Header>
+                <Card.Header as="h5">Reviewed by: {review.user.username} --------on: {date.slice(0,16)}</Card.Header>
                 <Card.Body>
-                    {isEditing ? <EditReview review={review} handleUpdateReview={handleUpdateReview}/> : <>
+                    {isEditing ? <EditReview review={review} handleUpdateReview={handleUpdateReview} /> : <>
                         <Stack spacing={1}>
                             <Rating name="read-only" readOnly value={review.rating} />
                         </Stack>

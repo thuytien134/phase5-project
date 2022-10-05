@@ -30,7 +30,7 @@ export default function MyReviewsCard({review}) {
                         </Stack>
                         <Card.Text>
                             Comment: {review.comment}<br/>
-                            Created at:{review.created_at}
+                            Created at: {Date(review.created_at).slice(0,16)}
                         </Card.Text>
                         <div>
                             <Button style={{ backgroundColor: "moccasin" }} onClick={handleDelete} >🗑</Button>
