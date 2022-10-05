@@ -6,8 +6,10 @@ In this project, you are able to create an account, log in - log out your accoun
 `bundle install`
 
 `npm install --prefix client`
+
 You can  run the rails server with:
 `rails s`
+
 And you can run React in another terminal with:
 `npm start --prefix client`
 

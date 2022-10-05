@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 import { UserContext } from './context/User';
 import { IsLoginContext } from './context/IsLogin';
 import gsap from 'gsap';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHomeUser } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function Header() {
@@ -35,7 +36,9 @@ export default function Header() {
                 <h1 style={{fontFamily:"fantasy",color:"lightcoral"}}  ref={el=>(shopName=el)}>Thuy Shop</h1>
             </div>
             <nav style={{border:"solid",background:"antiquewhite",display:"flex",flexDirection:"row",justifyContent:"flex-end",padding:"0.5rem",paddingRight:"1rem"}}>
-                <NavLink to="/" style={{paddingRight:"1.5rem"}}>Home </NavLink>
+                <NavLink to="/" style={{paddingRight:"1.5rem"}}> 
+                <FontAwesomeIcon icon={faHomeUser} className="hover:text-green-500"></FontAwesomeIcon>
+                </NavLink>
                 <NavLink to="/login" style={{paddingRight:"1.5rem"}}> {isLogin ? `Hi ${user.username}` : 'Log in'}</NavLink>
                 <NavLink to="/contact-us" >Contact us</NavLink>
             </nav>
