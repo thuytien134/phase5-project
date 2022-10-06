@@ -42,10 +42,10 @@ function App() {
           .then((user) => {
             setIsLogin(true);
             setUser(user)
-          },[]);
+          });
       }
     });
-  });
+  },[]);
 
 
 
