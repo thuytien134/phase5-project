@@ -1,5 +1,5 @@
 import React from 'react'
-import {  useContext } from 'react'
+import { useContext } from 'react'
 import { useParams } from 'react-router-dom';
 import { ReviewsContext } from './context/Reviews';
 import ProductReviewCard from './ProductReviewCard';
@@ -9,19 +9,21 @@ import { ProductsContext } from './context/Products';
 
 
 export default function ProductReviews() {
-   
-    const {reviews, setReviews} = useContext(ReviewsContext)
-    const {products} = useContext(ProductsContext)
-    
+
+    const { reviews, setReviews } = useContext(ReviewsContext)
+    const { products } = useContext(ProductsContext)
+
     let { id } = useParams()
-   
+
     const displayedReviews = reviews.filter(review => {
         return review.product.id === Number(id)
     })
-    // const curentProduct = products.filter(product => product.id === Number(id))[0]
-    // // debugger
-    // console.log(curentProduct.id)
- 
+    const curentProduct = products.filter(product => {
+        return product.id === Number(id)
+    })
+    //    debugger
+    //    console.log(displayedReviews[0].id)
+
     function handleAddReview(newReview) {
         setReviews([...reviews, newReview])
     }
@@ -32,11 +34,15 @@ export default function ProductReviews() {
         setReviews(updatedReviews)
     }
     return (
-        <div style={{paddingTop:"1rem"}}>
-            {/* <img variant="top" style={{ height: "200px", width: "200px" }} src={curentProductImg} /> */}
+        <div style={{ paddingTop: "1rem",display:"flex",alignItems:"flex-start",justifyContent:"space-evenly",flexDirection:"row-reverse" }}>
+            <div>
+                {curentProduct.map(product => {
+                    return <img key={product.id} src={product.image_url} style={{ height: "250px", width: "250px",border:"solid" }} variant="top" />
+                })}
+            </div>
             <div>
                 {displayedReviews.map(review => {
-                    return <ProductReviewCard key={review.id} review={review}  onUpdateReview={handleUpdateReview} />
+                    return <ProductReviewCard key={review.id} review={review} onUpdateReview={handleUpdateReview} />
                 })}
                 < ReviewForm curentProductId={id} onAddReview={handleAddReview} />
             </div>

@@ -32,9 +32,8 @@ export default function ProductReviewCard({ review, onUpdateReview }) {
 
     return (
         <div
-            style={{ padding: "1rem", width: "70%" }}
+            style={{ padding: "1rem", width: "90%" }}
         >
-            {/* {review.created_at} */}
             <Card >
                 <Card.Header as="h5">Reviewed by: {review.user.username} --------on: {date.slice(0,16)}</Card.Header>
                 <Card.Body>
