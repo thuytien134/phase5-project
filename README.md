@@ -1,7 +1,7 @@
 
-# Welcome to my Cosmetic shop project
+# Welcome to my Cosmetic Shop Project
 ## Introduction: 
-In this project, you are able to create an account, log in - log out your account, view all products of my shop, create-edit-delete review for each product.
+This  web application enables users to create an account, log in - log out your account, view the products in my shop, add and remove items in your bag, and create/edit/delete reviews for each product.
 ### To get set up, run:
 `bundle install`
 
@@ -22,9 +22,9 @@ And you can run React in another terminal with:
 * Ruby version: 
 ruby-2.7.4
 * System dependencies: 
-i have install `bcrypt` gem in order to use Rails's `has_secure_password` to store and authenticate user login credentials securely
+i installed `bcrypt` Ruby gem in order to use Rails's `has_secure_password` to store and authenticate user login credentials securely. Passwords are hashed and salted.
 
 * Deployment instructions:
-I have deployed on heroku, you can visit  here: [Thuy shop](https://thuy-shop-app.herokuapp.com/) 
+I deployed the app Heroku, you can visit  here: [Thuy shop](https://thuy-shop-app.herokuapp.com/) 
 
 
