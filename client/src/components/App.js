@@ -51,7 +51,6 @@ function App() {
 
   return (
     <div className="App" style={{ padding: "1rem", backgroundColor: "aliceblue", color: "cadetblue" }}>
-
       <Header />
       <Routes>
         <Route path="/" element={<ProducList />} />

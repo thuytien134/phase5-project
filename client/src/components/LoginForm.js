@@ -2,7 +2,7 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useState,useContext } from 'react';
+import { useState, useContext } from 'react';
 import { Alert } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from './context/User';
@@ -10,8 +10,8 @@ import { IsLoginContext } from './context/IsLogin';
 
 
 export default function LoginForm() {
-    const {setUser}= useContext(UserContext)
-    const {setIsLogin}= useContext(IsLoginContext)
+    const { setUser } = useContext(UserContext)
+    const { setIsLogin } = useContext(IsLoginContext)
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
@@ -59,7 +59,6 @@ export default function LoginForm() {
                         type="password" placeholder="Password" />
                 </Form.Group>
                 {errors.length === 0 ? "" : <Alert severity="error" >{errors.error}</Alert>}
-
                 <Button variant="primary" type="submit">
                     {isLoading ? "Loading..." : "Login"}
                 </Button>

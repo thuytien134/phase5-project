@@ -21,7 +21,6 @@ export default function Activity({reviews}) {
     
         <Tabs
           value={value} onChange={handleChange} aria-label="icon tabs example"
-        
         >
           <Tab icon={"🛍️ bag"} aria-label="bag" onClick={() => setShowBag(true)} />
           <Tab icon={"reviews"} aria-label="reviews" onClick={() => setShowBag(false)} />
@@ -29,8 +28,6 @@ export default function Activity({reviews}) {
         </Tabs>
 
         {showBag ? <ProductInBag/> : <Reviews reviews={reviews}/>}
-    
-
     </div>
   )
 }

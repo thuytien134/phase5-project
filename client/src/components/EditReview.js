@@ -32,7 +32,6 @@ export default function EditReview({review,handleUpdateReview}) {
                     type="text"
                     name="review"
                     autoComplete="off"
-                    // value={messageBody}
                     onChange={(e) => setNewReview(e.target.value)}
                 />
                 <button>Submit</button>

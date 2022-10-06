@@ -27,9 +27,7 @@ export default function Header() {
     
 
     return (
-        <div
-        //  style={{display: "flex", borderBottom: "3px solid", justifyContent:"space-between", alignItems:"center"}}
-        >
+        <div>
             <div style={{display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-evenly"}}>
                 <img ref={el=>(logo=el)} src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQDb8YyQwFznhZ5QfMw71jUVWmywoPFAzCZohM-4_TLxFhKWq4C" alt="logo"
                     style={{ height: "120px", width: "120px" }} />

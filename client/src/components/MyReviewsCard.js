@@ -35,7 +35,6 @@ export default function MyReviewsCard({review}) {
                         <div>
                             <Button style={{ backgroundColor: "moccasin" }} onClick={handleDelete} >🗑</Button>
                         </div>
-
                 </Card.Body>
             </Card>
     </div>

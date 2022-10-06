@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :reviews, only: [:index, :create, :update, :destroy]
+  resources :products, only: [:index]
  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -8,8 +9,7 @@ Rails.application.routes.draw do
   post 'product-in-carts', to: "product_in_carts#create"
   get 'product-in-carts', to: "product_in_carts#index"
   delete 'product-in-carts/:id', to: "product_in_carts#destroy"
-  get "/users", to: "users#index"
-  get '/products', to: 'products#index'
+  # get '/products', to: 'products#index'
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
   post "/login", to: "sessions#create"

@@ -16,7 +16,6 @@ class ReviewsController < ApplicationController
     end
 
     def update
-        # user = User.find_by(id: session[:user_id])
         review = Review.find_by(id: params[:id])
         if review 
              review.update(review_params)
