@@ -1,5 +1,5 @@
 import React from 'react'
-import {  Nav, Col } from 'react-bootstrap';
+import {  Nav } from 'react-bootstrap';
 
 export default function CategoryFilter({  setSelectedCategory, categories }) {
     return (
