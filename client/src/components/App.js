@@ -25,13 +25,13 @@ function App() {
     fetch("/products")
       .then((r) => r.json())
       .then((data) => setProducts(data));
-  }, []);
+  },[]);
 
   useEffect(() => {
     fetch("/reviews")
       .then((r) => r.json())
       .then((data) => setReviews(data));
-  }, []);
+  },[]);
 
 
   useEffect(() => {
@@ -42,10 +42,10 @@ function App() {
           .then((user) => {
             setIsLogin(true);
             setUser(user)
-          });
+          },[]);
       }
     });
-  }, []);
+  });
 
 
 

@@ -8,8 +8,7 @@ export default function Contact() {
             <h1 style={{ textDecorationLine: "underline" }}>Contact Us:</h1>
             <h3 style={{ paddingTop: "1.5rem" }}>☎️: (209) 237 8280</h3>
             <h3>
-                <FontAwesomeIcon icon={faEnvelope}/>
-                : <a >thuytienthuytien134@gmail.com</a></h3>
+                <FontAwesomeIcon icon={faEnvelope}/>: thuytienthuytien134@gmail.com </h3>
             <h3>
                 <FontAwesomeIcon icon={faFacebook} style={{color:"cornflowerblue"}}/>: <a href='https://www.facebook.com/thuytien.thuytiennguyen'>https://www.facebook.com/thuytien.thuytiennguyen</a></h3>
         </div>

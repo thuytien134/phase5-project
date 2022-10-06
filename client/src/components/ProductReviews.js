@@ -37,7 +37,7 @@ export default function ProductReviews() {
         <div style={{ paddingTop: "1rem",display:"flex",alignItems:"flex-start",justifyContent:"space-evenly",flexDirection:"row-reverse" }}>
             <div>
                 {curentProduct.map(product => {
-                    return <img key={product.id} src={product.image_url} style={{ height: "250px", width: "250px",border:"solid" }} variant="top" />
+                    return <img key={product.id} src={product.image_url} style={{ height: "250px", width: "250px",border:"solid" }} variant="top" alt='imgage' />
                 })}
             </div>
             <div>
