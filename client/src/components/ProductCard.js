@@ -41,7 +41,7 @@ export default function ProductCard({ product }) {
     navigate(`/product/${product.id}/reviews`, { state: { product } })
   }
   return (
-    <div style={{ height: "31rem", padding: "1rem" }}>
+    <div style={{ height: "33rem", padding: "1rem" }}>
       <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={product.image_url} width={250} height={250} />
         <Card.Body>
