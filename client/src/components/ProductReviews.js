@@ -21,8 +21,6 @@ export default function ProductReviews() {
     const curentProduct = products.filter(product => {
         return product.id === Number(id)
     })
-    //    debugger
-    //    console.log(displayedReviews[0].id)
 
     function handleAddReview(newReview) {
         setReviews([...reviews, newReview])

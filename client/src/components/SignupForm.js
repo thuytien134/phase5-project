@@ -19,7 +19,6 @@ export default function SignupForm() {
        
         e.preventDefault();
         setErrors([]);
-        // setIsLoading(true);
         fetch("/signup", {
           method: "POST",
           headers: {
@@ -31,7 +30,6 @@ export default function SignupForm() {
             password_confirmation: passwordConfirmation,
           })
         }).then((r) => {
-        //   setIsLoading(false);
           if (r.ok) {
             r.json().then((user) => {
             navigate('/login')

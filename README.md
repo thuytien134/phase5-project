@@ -18,7 +18,27 @@ And you can run React in another terminal with:
 ### Data structure
 ![ERD](./Database%20ER%20diagram%20(crow's%20foot).png)
 
-
+### FrontEnd structure
+```
+App
+├─ Header
+├─ ProductList
+│  ├─ CategoryFilter
+│  ├─ ProductCard
+├─ ProductReviews
+│  ├─ ProductReviewCard
+│  │  ├─ EditReview
+│  ├─ ReviewForm
+├─ Activity
+│  ├─ Logout
+│  ├─ ProductInBag
+│  │  ├─ ProductInBagCard
+│  ├─ Reviews
+│  │  ├─ MyReviewsCard
+├─ LoginForm
+├─ SignupForm
+├─ Contact
+```
 * Ruby version: 
 ruby-2.7.4
 * System dependencies: 
