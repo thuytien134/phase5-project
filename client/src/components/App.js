@@ -16,22 +16,22 @@ import Contact from "./Contact";
 
 
 function App() {
-  const { setUser } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   const { isLogin, setIsLogin } = useContext(IsLoginContext)
   const { setReviews } = useContext(ReviewsContext)
   const { setProducts } = useContext(ProductsContext)
- 
+
   useEffect(() => {
     fetch("/products")
       .then((r) => r.json())
       .then((data) => setProducts(data));
-  },[]);
+  }, []);
 
   useEffect(() => {
     fetch("/reviews")
       .then((r) => r.json())
       .then((data) => setReviews(data));
-  },[]);
+  }, []);
 
 
   useEffect(() => {
@@ -44,19 +44,20 @@ function App() {
             setUser(user)
           });
       }
+     
     });
-  },[]);
+  }, []);
 
-
+  
 
   return (
     <div className="App" style={{ padding: "1rem", backgroundColor: "aliceblue", color: "cadetblue" }}>
       <Header />
       <Routes>
         <Route path="/" element={<ProducList />} />
-        <Route path="/contact-us" element={<Contact/>}/>
+        <Route path="/contact-us" element={<Contact />} />
         <Route path="/product/:id/reviews" element={<ProductReviews />} />
-        <Route path="/login" element={isLogin ?
+        <Route path="/login" element={user !== null ?
           <Activity /> :
           <LoginForm />}
         />
@@ -67,3 +68,4 @@ function App() {
 }
 
 export default App;
+

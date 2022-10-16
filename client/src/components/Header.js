@@ -37,7 +37,7 @@ export default function Header() {
                 <NavLink to="/" style={{paddingRight:"1.5rem"}}> 
                 <FontAwesomeIcon icon={faHomeUser} className="hover:text-green-500"></FontAwesomeIcon>
                 </NavLink>
-                <NavLink to="/login" style={{paddingRight:"1.5rem"}}> {isLogin ? `Hi ${user.username}` : 'Log in'}</NavLink>
+                <NavLink to="/login" style={{paddingRight:"1.5rem"}}> {user !==null ? `Hi ${user.username}` : 'Log in'}</NavLink>
                 <NavLink to="/contact-us" >Contact us</NavLink>
             </nav>
         </div>
