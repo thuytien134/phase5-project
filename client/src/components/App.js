@@ -17,7 +17,7 @@ import Contact from "./Contact";
 
 function App() {
   const { user, setUser } = useContext(UserContext);
-  const { isLogin, setIsLogin } = useContext(IsLoginContext)
+  const {  setIsLogin } = useContext(IsLoginContext)
   const { setReviews } = useContext(ReviewsContext)
   const { setProducts } = useContext(ProductsContext)
 
