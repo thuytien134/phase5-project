@@ -1,7 +1,7 @@
 import React, { useContext,useRef,useEffect } from 'react'
 import { NavLink } from "react-router-dom";
 import { UserContext } from './context/User';
-import { IsLoginContext } from './context/IsLogin';
+// import { IsLoginContext } from './context/IsLogin';
 import gsap from 'gsap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHomeUser } from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +9,7 @@ import { faHomeUser } from '@fortawesome/free-solid-svg-icons';
 
 export default function Header() {
     const { user } = useContext(UserContext)
-    const { isLogin } = useContext(IsLoginContext)
+    // const { isLogin } = useContext(IsLoginContext)
     let shopName = useRef(null)
     let logo =useRef(null)
     useEffect(()=>{
